@@ -7,13 +7,13 @@ module.exports = function(app){
 app.get("/", function(req, res){
   res.sendFile(path.join(__dirname, '../public/view.html'));
 })
-//reserve
-app.get("/reserve", function(req, res){
-  res.sendFile(path.join(__dirname, '../public/addad.html'));
+//user
+app.get("/users", function(req, res){
+  res.sendFile(path.join(__dirname, '../public/user.html'));
 })
-//tables
-app.get("/tables", function(req, res){
-  res.sendFile(path.join(__dirname, '../public/adduser.html'));
+//advertiser
+app.get("/advertisers", function(req, res){
+  res.sendFile(path.join(__dirname, '../public/advertiser.html'));
 })
 
 };
