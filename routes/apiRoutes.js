@@ -1,20 +1,20 @@
 //dependencies
 const path = require('path');
 const bodyParser = require('body-parser');
-const waitList = require('../data/avertiser');
-const tableData = require('../data/user');
+const advertisers = require('../data/advertisers');
+const users = require('../data/users');
 
 //export all
 module.exports = function(app){
 
 //get users
 app.get("/api/users", function(req, res){
-  res.json(tableData);
+  res.json(users);
 });
 
 //get advertisers
 app.get("/api/advertisers", function(req, res){
-  res.json(waitList);
+  res.json(advertisers);
 });
 
 //post new users
