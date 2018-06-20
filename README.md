@@ -1,5 +1,5 @@
 # SocialRent
-node/express Marketplace app that allows users/advertisers to connect so users can rent posts on social media outlets to advertisers
+node/express Marketplace app that allows users/advertisers to connect so users can rent posts on social media outlets to advertisers, bypassing standard adblocker issues to create 'word-of-mouth' advertising in social media.
 
 ## Getting Started
 

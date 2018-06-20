@@ -1,23 +1,33 @@
-//dependencies
+//depenencies
 const express = require('express');
-const path = require('path');
+const db = require('./models');
 const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
 
-//express
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 8080;
 
-//body-parser
+//static route
+app.use(express.static('public'));
+
+//body parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-//routing
-require(path.join(__dirname, './routes/htmlRoutes'));
-require(path.join(__dirname, './routes/apiRoutes'));
-app.use(express.static(__dirname + '/public'));
+//handlebars
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+//routes
+const router = require('./controllers/user_controller.js');
+const router = require('./controllers/advertiser_controller.js');
+app.use('/', router);
 
 
-//------------listen------------------//
-app.listen(PORT, function(){
-  console.log("App listening on PORT:" + PORT + "...");
-})
+//-----Listening and sync with db -------//
+db.sequelize.sync()
+  .then(() =>{
+    app.listen(PORT, () => {
+      console.log("app listening on port:", PORT);
+    })
+  })
