@@ -10,3 +10,12 @@ const sequelizeConnection = models.sequelize;
 sequelizeConnection.sync();
 
 //++++++++++++++++++++controller routes +++++++++++++++++++++//
+
+
+
+
+
+
+
+
+module.exports = router;

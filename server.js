@@ -19,9 +19,10 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 //routes
-const router = require('./controllers/user_controller.js');
-const router = require('./controllers/advertiser_controller.js');
-app.use('/', router);
+const userRouter = require('./controllers/users_controller.js');
+const advertiserRouter = require('./controllers/advertisers_controller.js');
+app.use('/', userRouter);
+app.use('/', advertiserRouter);
 
 
 //-----Listening and sync with db -------//
