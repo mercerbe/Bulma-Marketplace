@@ -1,5 +1,5 @@
-# SocialRent
-node/express Marketplace app that allows users/advertisers to connect so users can rent posts on social media outlets to advertisers, bypassing standard adblocker issues to create 'word-of-mouth' advertising in social media.
+# Bulma Marketplace
+layout for marketplace site using Bulma
 
 ## Getting Started
 
@@ -48,7 +48,7 @@ Contact directly for Contributing
 
 ## Authors
 
-* **Ben Mercer, Austin Koeppel** - [Test](https://github.com/)
+* **Ben Mercer** - [Test](https://github.com/)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
