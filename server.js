@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 8080;
 
 //static route
 app.use(express.static('public'));
+app.use(express.static('semantic'));
 
 //body parser
 app.use(bodyParser.json());
