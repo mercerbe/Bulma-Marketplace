@@ -1,5 +1,5 @@
 {
-  "name": "socialrent",
+  "name": "Taulkback",
   "version": "1.0.0",
   "description": "socialRentPackage",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mercerbe/SocialRent.git"
+    "url": "git+https://github.com/mercerbe/Taulkback.git"
   },
   "author": "Ben Mercer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mercerbe/SocialRent/issues"
+    "url": "https://github.com/mercerbe/Taulkback/issues"
   },
-  "homepage": "https://github.com/mercerbe/SocialRent#readme",
+  "homepage": "https://github.com/mercerbe/Taulkback#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
