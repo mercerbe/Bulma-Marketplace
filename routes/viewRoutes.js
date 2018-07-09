@@ -15,10 +15,7 @@ module.exports = app => {
     res.render('signup')
   })
 
-  //login
-  app.get('/login', (req, res) => {
-    res.render('login')
-  })
+  //login-- check session -- userRoutes
 
   //homepage
   app.get('/home', (req, res) => {
@@ -52,6 +49,13 @@ module.exports = app => {
         likes: likes
       })
     })
+  })
+
+  //logout
+  app.get('/logout', (req, res) => {
+    req.session.destroy( err => {})
+    res.render('logout')
+    console.log("session closed ", req.session);
   })
 
 }
