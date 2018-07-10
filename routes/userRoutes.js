@@ -31,6 +31,7 @@ module.exports = app => {
         }
       })
     } else {
+      console.log(req.session);
       res.redirect('/home')
     }
   })
