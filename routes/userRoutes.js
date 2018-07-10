@@ -5,7 +5,9 @@ var db = require('../models')
 
 var sequelize = require('sequelize')
 
-//user routes
+const session = require('express-session');
+
+//-------------user routes----------------//
 module.exports = app => {
 
   //login
@@ -54,7 +56,7 @@ module.exports = app => {
 
       } else {
         res.redirect('/login');
-        console.log('testing new sessoin', req.session);
+        console.log('testing new session', req.session);
       }
     })
   })
@@ -63,9 +65,44 @@ module.exports = app => {
   app.post('/signup', (req, res) => {
     //create new user
     const user = db.user.build({
+      name: req.body.name,
+      email: req.body.email,
+      username: req.body.username,
+      password: req.body.password
+    })
+    console.log("new user: ", req.body);
 
+    //save new user
+    user.save().then( user => {
+      req.username = user.username;
+      req.session.authenticated = true;
+      res.redirect('/login')
+      console.log('session: ', req.session);
     })
   })
 
+  //----------posts----------------//
 
+  //save post
+  app.post('/home', (req, res) => {
+    const post = db.post.build({
+      title: req.body.postTitle = req.session.post,
+      body: req.body.postBody = req.session.post
+    })
+    console.log('new post: ', post)
+    post.save()
+    res.redirect('/home')
+  })
+
+  //new like
+  app.post('/likes', (req, res) => {
+    const like = db.like.build({
+      like: true,
+      userId: req.session.id,
+      postId: req.body.submitBtn
+    })
+    like.save().then( like => {
+      console.log("liked: ", like);
+    })
+  })
 }

@@ -1,4 +1,5 @@
 //depenencies
+require('dotenv').config()
 const express = require('express');
 const parseurl = require('parseurl');
 const path = require('path');
@@ -6,7 +7,7 @@ const expressValidator = require('express-validator');
 const db = require('./models');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
-const sessoin = require('express-session');
+const session = require('express-session');
 
 
 const app = express();
@@ -23,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //session
 app.set('trust proxy', 1)
 app.use(session({
-  secret:'',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
@@ -34,7 +35,8 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 //-------------routes------------------//
-require("./routes/views.js")(app);
+require("./routes/viewRoutes.js")(app);
+require("./routes/userRoutes")(app);
 
 //-----Listening and sync with db -------//
 db.sequelize.sync()

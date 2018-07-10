@@ -1,6 +1,8 @@
 //dependencies
 const db = require('../models')
 
+const session = require('express-session');
+
 //export view routes
 
 module.exports = app => {
