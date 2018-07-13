@@ -1,0 +1,13 @@
+<div class="navbar">
+  <span><a href="./home">home</a></span><span><a href="./new">new post</a></span><span><a href="./likes">Likes</a></span><span>logged in as {{#name}}{{.}}{{/name}}</span><span><a href="/logout">log out</a></span>
+</div>
+
+<div class="bodywrapper">
+  <h3>Recent Likes</h3>
+  <ul>
+    {{#likes}}
+      <li class="posted">post{{postId}}</li>
+      <li class="liked">was liked by{{user.name}}</li>
+    {{/likes}}
+  </ul>
+</div>

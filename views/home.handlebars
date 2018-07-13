@@ -1,0 +1,37 @@
+<div class="navbar">
+  <span><a href="./home">home</a></span><span><a href="./new">new post</a></span><span><a href="./likes">Likes</a></span><span>logged in as {{#name}}{{.}}{{/name}}</span><span><a href="/logout">log out</a></span>
+</div>
+
+<div class="bodywrapper">
+
+
+  <ul>
+    <div>
+      <h3>Welcome, {{#name}}{{.}}{{/name}}</h3>
+      <h1 class="h1">Recent Posts</h1>
+    </div>
+    <div class="postsdiv" style="overflow:auto;">
+
+      {{#posts}}
+        <div class="postwrapper">
+          <div>
+
+            <li class="name">{{user.name}}</li>
+
+            <li class="posttitle">{{title}}
+              <div>{{createdAt}}</div>
+            </li>
+            <li class="postbody">{{body}}</li>
+          </div>
+          <form class="" action="/like" method="post">
+            <label>like post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
+            <label>Delete post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
+          </form>
+        </div>
+      {{/posts}}
+
+    </div>
+
+</div>
+</ul>
+</div>

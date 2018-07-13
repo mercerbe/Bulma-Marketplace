@@ -26,13 +26,13 @@ app.set('trust proxy', 1)
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
+  saveUninitialized: true
 }))
 
 //handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+app.set('views', './views')
 
 //-------------routes------------------//
 require("./routes/viewRoutes.js")(app);

@@ -29,9 +29,10 @@ module.exports = app => {
             user: user
           })
         }
+        console.log('login as: ', user);
       })
     } else {
-      console.log(req.session);
+      console.log("session: ", req.session);
       res.redirect('/home')
     }
   })
@@ -90,7 +91,7 @@ module.exports = app => {
       title: req.body.postTitle = req.session.post,
       body: req.body.postBody = req.session.post
     })
-    console.log('new post: ', post)
+    console.log('new post: ', req.session.post)
     post.save()
     res.redirect('/home')
   })

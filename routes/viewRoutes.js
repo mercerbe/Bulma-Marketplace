@@ -3,7 +3,7 @@ const db = require('../models')
 
 const session = require('express-session');
 
-//export view routes
+//------------------view routes-----------------//
 
 module.exports = app => {
 
@@ -18,6 +18,9 @@ module.exports = app => {
   })
 
   //login-- check session -- userRoutes
+  app.get('/login', (req, res) => {
+    res.render('login')
+  })
 
   //homepage
   app.get('/home', (req, res) => {
@@ -26,6 +29,7 @@ module.exports = app => {
         posts: posts,
         name: req.session.username
       })
+      console.log(req.session);
     })
   })
 
@@ -40,7 +44,7 @@ module.exports = app => {
   })
 
   //liked posts
-  app.get('/liked', (req, res) => {
+  app.get('/likes', (req, res) => {
     db.like.findAll({
       include: [{
         model: db.user,
