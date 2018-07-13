@@ -1,28 +1,35 @@
-<form action="/signup" method="post">
-  <h1 class="h1">Sign Up</h1>
-  <fieldset>
-    <div class="labelwrap2">
-      <div class="labelwrap">
-        <label for="name">Name</label>
-        <input required type="text" name="name" placeholder="name">
-      </div>
-      <div class="labelwrap">
-        <label for="email">Email</label>
-        <input type="text" name="email" placeholder="example@example.com">
-      </div>
-    </div>
-    <div class="labelwrap2">
-      <div class="labelwrap">
-        <label for="username">Username</label>
-        <input type="text" name="username" placeholder="name">
-      </div>
-      <div class="labelwrap">
-        <label for="password">Password</label>
-        <input type="text" name="password" placeholder="password">
-      </div>
-    </div>
-    <div class="form__submit-button">
-      <input type="submit">
-    </div>
-  </fieldset>
-</form>
+<div class="ui center aligned inverted raised very padded text container segment">
+  <div class="ui inverted form">
+    <form action="/signup" method="post">
+      <h1 class="h1">Sign Up</h1>
+      <fieldset>
+        <div class="labelwrap2">
+          <div class="labelwrap">
+            <label for="name">Name</label>
+            <input required type="text" name="name" placeholder="name">
+          </div>
+          <div class="labelwrap">
+            <label for="email">Email</label>
+            <input required type="text" name="email" placeholder="example@example.com">
+          </div>
+        </div>
+        <div class="labelwrap2">
+          <div class="labelwrap">
+            <label for="username">Username</label>
+            <input required type="text" name="username" placeholder="name">
+          </div>
+          <div class="labelwrap">
+            <label for="password">Password</label>
+            <input required type="text" name="password" placeholder="password">
+          </div>
+        </div>
+        <br>
+        <div class="form__submit-button">
+          <input class="ui inverted teal button" type="submit">
+        </div>
+      </fieldset>
+    </form>
+    <br>
+    <a href="/"><button class="ui inverted primary button">Back</button></a>
+  </div>
+</div>

@@ -1,21 +1,26 @@
-<div class="navbar">
-  <span><a href="./home">home</a></span><span><a href="./new">new post</a></span><span><a href="./likes">Likes</a></span><span>logged in as {{#name}}{{.}}{{/name}}</span><span><a href="/logout">log out</a></span>
+<!-- menu bar -->
+<div class="ui inverted five item menu">
+  <a class="item" href="./home">home</a><a class="item" href="./new">new post</a><a class="item" href="./likes">Likes</a><a class="inactive item" >logged in as {{#name}}{{.}}{{/name}}</a><a class="item" href="/logout">log out</a>
 </div>
-<div class="bodywrapper">
+
+<!-- new post form -->
+<div class="ui center aligned inverted raised very padded text container segment">
+  <div class="ui inverted form">
   <form action="/new" method="post">
     <div>
-      <h3>Welcome, {{#name}}{{.}}{{/name}}</h3>
-
+      <h2 class="ui inverted header">=>{{#name}}{{.}}{{/name}}<=</h3>
     </div>
-    <h1 class="h1">Write a new post:</h1>
+    <h3 class="ui inverted header">Write a new post =></h1>
     <fieldset>
       <div class="labelwrap">
         <input class="post_title" type="text" name="post_title" placeholder="Post Title">
         <textarea class="post_body" type="text" name="post_body" placeholder="Write your post here..."></textarea>
       </div>
       <div class="form__submit-button">
-        <input type="submit">
+        <br>
+        <input class="ui inverted primary button" type="submit">
       </div>
     </fieldset>
   </form>
+  </div>
 </div>
