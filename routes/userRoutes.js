@@ -78,7 +78,6 @@ module.exports = app => {
       req.username = user.username;
       req.session.authenticated = true;
       res.redirect('/login')
-      console.log('session: ', req.session);
     })
   })
 

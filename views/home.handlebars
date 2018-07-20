@@ -32,10 +32,10 @@
             <div class="">{{body}}</div>
             <div class="">{{createdAt}}</div>
 
-          <form class="" action="/like" method="post">
-            <label>like post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
-            <label>delete post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
-          </form>
+            <form class="" action="/like" method="post">
+              <button class="ui inverted tiny teal button" type="submit" name="submitbtn"><i class="thumbs up icon"></i></button>
+              <button class="ui inverted tiny teal button" type="submit" name="submitbtn"><i class="times icon"></i></button>
+            </form>
 
         </div>
       {{/posts}}
