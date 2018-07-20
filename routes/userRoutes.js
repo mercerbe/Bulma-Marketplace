@@ -14,7 +14,7 @@ module.exports = app => {
   app.get('/login', (req, res) => {
     //check login
     if (req.session && req.session.authenticated) {
-      let user = db.user.findOne({
+      var user = db.user.findOne({
         where: {
           username: req.session.username,
           password: req.session.password
@@ -29,10 +29,9 @@ module.exports = app => {
             user: user
           })
         }
-        console.log('login as: ', user);
+        console.log('login as: ', user)
       })
     } else {
-      console.log("session: ", req.session);
       res.redirect('/home')
     }
   })
@@ -58,7 +57,7 @@ module.exports = app => {
 
       } else {
         res.redirect('/login');
-        console.log('testing new session', req.session);
+        console.log('new session:', req.session);
       }
     })
   })
@@ -104,12 +103,13 @@ module.exports = app => {
       title: req.body.postTitle = req.session.post,
       body: req.body.postBody = req.session.post
     })
+    console.log(req.session.post)
     post.save()
     res.redirect('/home')
   })
 
   //new like
-  app.post('/likes', (req, res) => {
+  app.post('/like', (req, res) => {
     const like = db.like.build({
       like: true,
       userId: req.session.userId,
@@ -117,6 +117,7 @@ module.exports = app => {
     })
     like.save().then( like => {
       console.log("liked: ", like);
+      res.redirect('/likes')
     })
   })
 }

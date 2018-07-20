@@ -2,6 +2,8 @@
   <!-- fonts -->
 </head>
 
+<div class="main_wrapper" style="height:100%;">
+
 <div class="ui inverted raised very padded segment">
   <h1 class="ui center aligned icon header">
     <i class="comments outline icon"></i>
@@ -19,6 +21,23 @@
 
 <div class="ui inverted raised padded text container segment">
   <h3 class="ui header">Recent Posts</h3>
+  <div class="postsDiv" style="overflow: auto;max-height:300px;">
+  {{#posts}}
+    <div class="postwrapper">
+
+        <div class="">{{user.name}}</div>
+        <div class="">{{title}}</div>
+        <div class="">{{body}}</div>
+        <div class="">{{createdAt}}</div>
+
+      <form class="" action="/like" method="post">
+        <label>like post: </label><input class="ui mini teal button" type="submit" name="submitbtn" value="{{id}}">
+      </form>
+
+    </div>
+  {{/posts}}
+  </div>
+</div>
 </div>
 
 {{> footer}}

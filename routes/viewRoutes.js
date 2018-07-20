@@ -29,7 +29,7 @@ module.exports = app => {
 
   //homepage
   app.get('/home', (req, res) => {
-    db.post.findAll({}).then(posts => {
+    db.post.findAll({order: [['updatedAt', 'DESC']]}).then(posts => {
       res.render('home', {
         posts: posts,
         name: req.session.username
