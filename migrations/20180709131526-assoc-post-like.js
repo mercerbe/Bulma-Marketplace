@@ -1,5 +1,5 @@
 'use strict';
-
+//adds postId to the likes
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*

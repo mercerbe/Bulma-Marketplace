@@ -9,7 +9,12 @@ module.exports = app => {
 
   //landing page
   app.get('/', (req, res) => {
-    res.render('index')
+    db.post.findAll({limit: 10, order: [['updatedAt', 'DESC']]}).then( posts => {
+      res.render('index', {
+        posts: posts
+      })
+      console.log("page loaded");
+    })
   })
 
   //signup

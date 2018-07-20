@@ -86,12 +86,23 @@ module.exports = app => {
   //----------posts----------------//
 
   //save post
+  app.post('/new', (req, res) => {
+    const post = db.post.build({
+      userId: req.session.userId,
+      title: req.body.postTitle,
+      body: req.body.postBody
+    })
+    post.save().then( post => {
+      console.log(post)
+    })
+  })
+
+  //post to home
   app.post('/home', (req, res) => {
     const post = db.post.build({
       title: req.body.postTitle = req.session.post,
       body: req.body.postBody = req.session.post
     })
-    console.log('new post: ', req.session.post)
     post.save()
     res.redirect('/home')
   })
@@ -100,7 +111,7 @@ module.exports = app => {
   app.post('/likes', (req, res) => {
     const like = db.like.build({
       like: true,
-      userId: req.session.id,
+      userId: req.session.userId,
       postId: req.body.submitBtn
     })
     like.save().then( like => {

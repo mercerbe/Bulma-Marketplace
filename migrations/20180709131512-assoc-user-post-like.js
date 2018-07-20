@@ -1,5 +1,5 @@
 'use strict';
-
+//adds userId and postId to likes
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -25,5 +25,7 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
+    'likes',
+    'userId'
   }
 };
