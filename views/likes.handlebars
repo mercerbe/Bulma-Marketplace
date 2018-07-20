@@ -1,7 +1,10 @@
 <!-- menu bar -->
-<div class="ui inverted five item menu">
-  <a class="item" href="./home">home</a><a class="item" href="./new">new post</a><a class="item" href="./likes">Likes</a><a class="inactive item" >logged in as {{#name}}{{.}}{{/name}}</a><a class="item" href="/logout">log out</a>
+<div class="ui inverted segment">
+  <div class="ui fixed inverted five item menu">
+    <span class="item"><i class="comments outline icon"></i>Taulkback</span><a class="item" href="/home">home</a><a class="item" href="/new">New Post</a><span class="item">logged in as {{#name}}{{.}}{{/name}}</span><a class="item" href="/logout">log out</a>
+  </div>
 </div>
+<br>
 
 
 <div class="ui center aligned inverted raised very padded text container segment">
@@ -15,3 +18,5 @@
   </ul>
 </div>
 </div>
+
+{{> footer}}

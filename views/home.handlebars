@@ -1,13 +1,24 @@
-<div class="navbar">
-  <span><a href="./home">home</a></span><span><a href="./new">new post</a></span><span><a href="./likes">Likes</a></span><span>logged in as {{#name}}{{.}}{{/name}}</span><span><a href="/logout">log out</a></span>
+<div class="ui inverted segment">
+  <div class="ui fixed inverted menu">
+    <span href="#" class="header item">
+      <i class="comments outline icon"></i>
+      Taulkback
+    </span>
+    <a class="item" href="/home">Home</a>
+    <a class="item" href="/new">New Post</a>
+    <a class="item" href="likes">Likes</a>
+    <span class="item">Logged in as {{#name}}{{.}}{{/name}}</span>
+    <a class="item" href="/logout">Logout</a>
+  </div>
+  <br>
+    <h1 class="ui center aligned icon inverted header"><i class="comments outline icon"></i>Welcome, {{#name}}{{.}}{{/name}}</h1>
 </div>
 
-<div class="bodywrapper">
 
 
+<div class="ui inverted raised very padded text container segment">
   <ul>
     <div>
-      <h3>Welcome, {{#name}}{{.}}{{/name}}</h3>
       <h1 class="h1">Recent Posts</h1>
     </div>
     <div class="postsdiv" style="overflow:auto;">
@@ -31,7 +42,8 @@
       {{/posts}}
 
     </div>
+    </ul>
+  </div>
 
-</div>
-</ul>
-</div>
+
+  {{> footer}}
