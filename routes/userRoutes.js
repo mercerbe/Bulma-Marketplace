@@ -94,6 +94,7 @@ module.exports = app => {
     })
     post.save().then( post => {
       console.log(post)
+      res.redirect('/home')
     })
   })
 
