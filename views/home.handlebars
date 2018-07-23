@@ -1,4 +1,4 @@
-<div class="main_wrapper" style="height:100%;">
+<div class="main_wrapper" style="">
 <div class="ui inverted segment">
   <div class="ui fixed inverted menu">
     <span href="#" class="header item">
@@ -30,10 +30,10 @@
 
             <div class=""><strong>{{title}}</strong></div>
             <div class="">{{body}}</div>
-            <div class=""><small>posted by: {{userId}}    at: {{createdAt}}</small></div>
+            <div class=""><small>posted by: {{userId}} at: {{createdAt}}</small></div>
 
             <form class="" action="/like" method="post">
-              <button class="ui right floated inverted tiny teal button" type="submit" name="submitbtn"><i class="thumbs up icon"></i></button>
+              <button class="ui right floated inverted tiny teal button" type="submit" name="submitbtn" value="{{id}}"><i class="thumbs up icon"></i></button>
               <button class="ui right floated inverted tiny teal button" type="submit" name="submitbtn"><i class="times icon"></i></button>
             </form>
             </fieldset>

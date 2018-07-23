@@ -11,7 +11,7 @@ Fullstack web-app messaging designed with semantic ui
 
 ## Demo
 
-You can demo this web app on heroku at:  [Taulkback](https://tbd.herokuapp.com/).
+You can demo this web app on heroku at:  [Taulkback](https://serene-river-33810.herokuapp.com/).
 
 ## Installation
 
