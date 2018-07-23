@@ -59,6 +59,7 @@ module.exports = app => {
       res.render('likes', {
         likes: likes
       })
+      console.log(likes.user)
     })
   })
 
