@@ -1,12 +1,25 @@
+
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  var post = sequelize.define('post', {
-    title: DataTypes.STRING,
-    body: DataTypes.STRING
-  }, {});
-  post.associate = function(models) {
-    // associations can be defined here
-    post.belongsTo(models.user, {as:'user', foreignKey: 'userId'})
+module.exports = function(sequelize, DataTypes) {
+  var Post = sequelize.define('Post', {
+    post: DataTypes.STRING,
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Users',
+        key: 'id'
+      }
+    }
+  });
+
+  Post.associate = function(models) {
+    Post.belongsTo(models.User, {foreignKey: 'userId'});
+    Post.hasMany(models.Like, {foreignKey: 'postId'})
   };
-  return post;
+
+
+  return Post;
+
+
 };

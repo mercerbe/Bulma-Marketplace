@@ -1,12 +1,29 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  var like = sequelize.define('like', {
-    like: DataTypes.BOOLEAN
-  }, {});
-  like.associate = function(models) {
-    // associations can be defined here
-    like.belongsTo(models.user,{as : 'user', foreignKey: 'userId'})
-    like.belongsTo(models.post,{as : 'post', foreignKey: 'postId'})
+module.exports = function(sequelize, DataTypes) {
+  var Like = sequelize.define('Like', {
+    liked: DataTypes.BOOLEAN,
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Users',
+        key: 'id'
+      }
+    },
+    postId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Posts',
+        key: 'id'
+      }
+    }
+  });
+
+
+  Like.associate = function(models) {
+    Like.belongsTo(models.User, {foreignKey: 'userId', as: "liker"});
+    Like.belongsTo(models.Post, {foreignKey: 'postId'});
   };
-  return like;
+  return Like;
 };

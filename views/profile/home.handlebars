@@ -1,0 +1,27 @@
+
+<h2>Welcome Back, {{user}}</h2>
+<hr>
+
+<h5>Recent Gabs</h5>
+{{#each posts}}
+  <div class="d-sm-flex flex-row justify-content-between posts">
+    <div class="post-info">
+      <span class="username">{{User.dataValues.username}}: </span>
+      <span>{{post}}</span>
+      <p class="date">{{posted}}</p>
+    </div>
+    <div class="buttons">
+      {{#if isCurrentUser}}
+      <div class=" d-flex flex-column">
+        <a class="edit-delete btn btn-outline-info btn-sm" href="/gabble/{{id}}/edit">Edit</a>
+        <a class="edit-delete btn btn-info btn-sm" href="/gabble/{{id}}/delete">Delete</a>
+      </div>
+    {{else}}
+      <a class="btn btn-outline-primary btn-sm" href="/gabble/{{id}}/like">Like</a>
+    {{/if}}
+  </div>
+  </div>
+    <a  href="/gabble/{{id}}/likes"><span class="likes-link">Likes: {{Likes.length}}</span></a>
+  <hr>
+
+{{/each}}

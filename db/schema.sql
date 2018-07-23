@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS taulkback_db;
+CREATE DATABASE taulkback_DB;
 
-CREATE DATABASE taulkback_db;
+USE taulkback_DB;
