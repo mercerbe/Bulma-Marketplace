@@ -2,42 +2,44 @@
   <!-- fonts -->
 </head>
 
-<div class="main_wrapper" style="height:100%;">
+<div class="main_wrapper" style="">
 
-<div class="ui inverted raised very padded segment">
-  <h1 class="ui center aligned icon header">
+  <div class="ui inverted raised very padded segment">
+    <h1 class="ui center aligned icon header">
     <i class="comments outline icon"></i>
     <div class="content">
       Taulkback
     </div>
   </h1>
 
-  <div class="ui inverted center aligned segment">
-    <a href="/signup"><button class="ui inverted teal button">Signup</button></a>
-    <a href="/login"><button class="ui inverted teal button">Login</button></a>
-  </div>
-</div>
-
-
-<div class="ui inverted raised padded text container segment">
-  <h3 class="ui header">Recent Posts</h3>
-  <div class="postsDiv" style="overflow: auto;max-height:300px;">
-  {{#posts}}
-    <div class="postwrapper">
-
-        <div class="">{{user.name}}</div>
-        <div class="">{{title}}</div>
-        <div class="">{{body}}</div>
-        <div class="">{{createdAt}}</div>
-
-      <form class="" action="/like" method="post">
-        <button class="ui inverted tiny teal button" type="submit" name="submitbtn"><i class="thumbs up icon"></i></button>
-      </form>
-
+    <div class="ui inverted center aligned segment">
+      <a href="/signup"><button class="ui inverted teal button">Signup</button></a>
+      <a href="/login"><button class="ui inverted teal button">Login</button></a>
     </div>
-  {{/posts}}
+  </div>
+
+
+  <div class="ui inverted raised padded text container segment">
+    <h2 class="ui header">Want to join? Check out some recent posts:</h2>
+    <div class="postsDiv" style="overflow: auto;max-height:400px;">
+      {{#posts}}
+        <div class="postwrapper">
+          <fieldset>
+
+            <div class="">{{user.name}}</div>
+            <div class=""><strong>{{title}}</strong></div>
+            <div class="">{{body}}</div>
+            <div class=""><small>posted by: {{userId}}</small></div>
+            <div class=""><small>{{createdAt}}</small></div>
+
+            <form class="" action="/like" method="post">
+              <button class="ui right floated inverted tiny teal button disabled" type="submit" name="submitbtn"><i class="thumbs up icon"></i></button>
+            </form>
+
+          </fieldset>
+        </div>
+      {{/posts}}
+    </div>
   </div>
 </div>
-</div>
-<br>
-{{> footer}}
+<br> {{> footer}}

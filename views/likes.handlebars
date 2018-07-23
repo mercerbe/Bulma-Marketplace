@@ -1,4 +1,4 @@
-<div class="main_wrapper" style="height:100%;">
+<div class="main_wrapper" style="">
 <!-- menu bar -->
 <div class="ui inverted segment">
   <div class="ui fixed inverted five item menu">
@@ -9,13 +9,13 @@
 
 
 <div class="ui center aligned inverted raised very padded text container segment">
-<div class="wrapper">
+<div class="wrapper" style="overflow:auto; max-height:450px">
   <h3 class="ui inverted header">Recent Likes</h3>
 
     {{#likes}}
     <fieldset>
-      <li class="posted">post{{postId}}</li>
-      <li class="liked">was liked by{{user.name}}</li>
+      <div class="posted">post{{postId}}</div>
+      <div class="liked">was liked by{{user.name}}</div>
     </fieldset>
     {{/likes}}
 

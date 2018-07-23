@@ -26,17 +26,17 @@
 
       {{#posts}}
         <div class="postwrapper">
-
+          <fieldset>
             <div class="">{{user.name}}</div>
-            <div class="">{{title}}</div>
+            <div class=""><strong>{{title}}</strong></div>
             <div class="">{{body}}</div>
-            <div class="">{{createdAt}}</div>
+            <div class=""><small>{{createdAt}}</small></div>
 
             <form class="" action="/like" method="post">
-              <button class="ui inverted tiny teal button" type="submit" name="submitbtn"><i class="thumbs up icon"></i></button>
-              <button class="ui inverted tiny teal button" type="submit" name="submitbtn"><i class="times icon"></i></button>
+              <button class="ui right floated inverted tiny teal button" type="submit" name="submitbtn"><i class="thumbs up icon"></i></button>
+              <button class="ui right floated inverted tiny teal button" type="submit" name="submitbtn"><i class="times icon"></i></button>
             </form>
-
+            </fieldset>
         </div>
       {{/posts}}
 
