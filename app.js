@@ -6,6 +6,7 @@ const flash = require('express-flash-messages');
 const bodyParser = require('body-parser');
 const models = require('./models');
 const routes = require('./router');
+const validator = require('validator')
 
 
 
