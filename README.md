@@ -1,5 +1,5 @@
 # Taulkback
-> Messaging app
+> Social Posting app
 
 Sequelize | Express | Semantic | Node
 
@@ -7,7 +7,7 @@ Sequelize | Express | Semantic | Node
 ![npm](https://img.shields.io/npm/v/npm.svg)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
-Fullstack web-app messaging designed with semantic ui
+Fullstack social web-app designed with semantic ui
 
 ## Demo
 

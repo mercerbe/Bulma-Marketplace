@@ -1,7 +1,8 @@
+//dependencies
 const models = require('../models');
 const moment = require('moment');
 
-GabbleController = {
+PostController = {
   createForm: function(req, res) {
     res.render('profile/create');
   },
@@ -38,10 +39,10 @@ GabbleController = {
 
   create: function(req, res) {
     let newPost = models.Post.create({
-      post: req.body.newGab,
+      post: req.body.newPost,
       userId: req.user.id
     }).then(function(post) {
-      res.redirect('/gabble/home');
+      res.redirect('/taulkback/home');
     });
   },
 
@@ -52,7 +53,7 @@ GabbleController = {
       userId: req.user.id,
       postId: req.params.id
     }).then(function(like) {
-      res.redirect('/gabble/home');
+      res.redirect('/taulkback/home');
     })
   },
 
@@ -68,7 +69,7 @@ GabbleController = {
         }
       })
     }).then(function() {
-      res.redirect('/gabble/home');
+      res.redirect('/taulkback/home');
     });
   },
 
@@ -113,7 +114,7 @@ GabbleController = {
           id: id
         },
       }).then(function(user) {
-        res.redirect('/gabble/home');
+        res.redirect('/taulkback/home');
       })
     }
 
@@ -124,4 +125,4 @@ GabbleController = {
 };
 
 
-module.exports = GabbleController;
+module.exports = PostController;

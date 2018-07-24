@@ -13,21 +13,22 @@ const app = express();
 
 // config view and static layout
 app.engine('handlebars', exphbs({
-  defaultLayout: 'base'
+  defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
+app.set('views', './views')
 
 app.use('/static', express.static('public'));
+app.use(express.static('semantic'));
 
-// for body parser
+//body parser
 app.use(bodyParser.urlencoded({extended: true}));
 
 // passport user auth config
-
 require('./controllers/passport');
 
 
-// for Passport
+//Session
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
@@ -35,19 +36,19 @@ app.use(session({
 }));
 
 
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
 
 
 // Router
 routes(app);
 
-
-app.listen(process.env.PORT || 3000, () => {
-  console.log("app in dev on localhost");
+const PORT = process.env.PORT || 8080
+app.listen(PORT, () => {
+  console.log(`app listening on port ${PORT}`)
 });
 
 
 
-module.exports = app;
+module.exports = app

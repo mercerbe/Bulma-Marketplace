@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Taulkback</title>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+  <!-- Semanitc ui-->
+  <link rel="stylesheet" type="text/css" href="/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="/dist/semantic.min.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="/static/app.css">
+
+
+</head>
+
+<!-- nav -->
+<div class="ui inverted segment" style="">
+  <div class="ui inverted menu">
+    <span href="/" class="header item"><i class="comments outline icon"></i>Taulkback</span>
+    <a href="/taulkback/home" class="item">Home</a>
+    <a href="/taulkback/create" class="item">Create a Post</a>
+    {{#if user}}
+    <a href="/logout" class="item">Logout</a>
+    {{else}}
+    <a href="/" class="item">Login</a>
+    <a href="/signup" class="item">Signup</a>
+    {{/if}}
+  </div>
+  <div class="ui inverted raised padded segment">
+    <h1 class="ui center aligned icon header">
+    <i class="comments outline icon"></i>
+    <div class="content">
+      Taulkback
+    </div>
+  </h1>
+  </div>
+</div>
+
+
+<body style="background-color: rgb(220,220,215);">
+
+    {{{body}}}
+
+<!-- footer partial -->
+{{> footer}}
+</body>
+
+</html>

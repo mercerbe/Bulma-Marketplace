@@ -1,13 +1,12 @@
 const express = require('express');
 const passport = require('passport');
-
 const UserController = require('./controllers/user');
-const GabbleController = require('./controllers/gabble');
+const PostController = require('./controllers/post');
 
 module.exports = function(app) {
 
   const userRouter = express.Router();
-  const gabbleRouter = express.Router();
+  const postRouter = express.Router();
 
 
 // Middleware to protect routes
@@ -19,7 +18,7 @@ module.exports = function(app) {
   }
 
   userRouter.post('/login/', passport.authenticate('local-login', {
-        successRedirect: '/gabble/home',
+        successRedirect: '/taulkback/home',
         failureRedirect: '/',
         failureFlash: true
     }));
@@ -35,15 +34,15 @@ module.exports = function(app) {
     userRouter.get('/', UserController.login);
     userRouter.get('/signup', UserController.signup);
     userRouter.get('/logout', UserController.logout);
-    gabbleRouter.get('/home', isLoggedIn, GabbleController.home);
-    gabbleRouter.get('/create', isLoggedIn, GabbleController.createForm);
-    gabbleRouter.post('/create', GabbleController.create);
-    gabbleRouter.get('/:id/like', GabbleController.like);
-    gabbleRouter.get('/:id/delete', GabbleController.delete);
-    gabbleRouter.get('/:id/likes', GabbleController.displayLikes);
-    gabbleRouter.get('/:id/edit', GabbleController.updateform);
-    gabbleRouter.post('/:id/update', GabbleController.update);
+    postRouter.get('/home', isLoggedIn, PostController.home);
+    postRouter.get('/create', isLoggedIn, PostController.createForm);
+    postRouter.post('/create', PostController.create);
+    postRouter.get('/:id/like', PostController.like);
+    postRouter.get('/:id/delete', PostController.delete);
+    postRouter.get('/:id/likes', PostController.displayLikes);
+    postRouter.get('/:id/edit', PostController.updateform);
+    postRouter.post('/:id/update', PostController.update);
 
   app.use('/', userRouter);
-  app.use('/gabble/', gabbleRouter);
+  app.use('/taulkback/', postRouter);
 };

@@ -1,6 +1,10 @@
-<form class="" action="/gabble/{{post.id}}/update" method="post">
-  <h2>Update your gab</h2>
-  <p>Limit 140 characters</p>
-  <textarea name="post" class="newGab form-control">{{post.post}}</textarea>
-  <input class="btn btn-outline-primary btn-sm" type="submit" name="" value="Save gab">
+<div class="ui center aligned inverted raised very padded centered text container segment">
+<form class="ui form" action="/taulkback/{{post.id}}/update" method="post">
+  <h2>Edit your post</h2>
+  <p>Limit 300 characters</p>
+  <div class="field">
+  <textarea name="post" class="form-control" rows="4">{{post.post}}</textarea>
+  </div>
+  <input class="ui inverted teal button" type="submit" name="" value="Save">
 </form>
+</div>
