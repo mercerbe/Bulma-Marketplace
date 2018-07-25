@@ -3,7 +3,6 @@ const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const models = require('../models');
 const LocalStrategy = require('passport-local').Strategy;
-const validator = require('validator')
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);

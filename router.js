@@ -1,6 +1,5 @@
 const express = require('express');
 const passport = require('passport');
-const validator = require('validator')
 const UserController = require('./controllers/user');
 const PostController = require('./controllers/post');
 
